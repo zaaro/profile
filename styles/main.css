@@ -1,0 +1,223 @@
+@import "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
+
+* {
+    font-family: 'Ubuntu', sans-serif; 
+}
+
+body{
+    margin: 0;
+    padding: 1em;
+    background-color: #333;
+}
+
+p{
+    color: white;
+    margin: 0px 0px 3px 0px;
+    opacity: 0;
+}
+
+#container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+    box-shadow: 0 3px 8px #000;
+}
+
+body.animate #container{
+    background-size: 230% !important;
+}
+
+#profile-foreground {
+    background: #642B73;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #C6426E, #642B73);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #C6426E, #642B73); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    position: absolute;
+    z-index: 0;
+    left:0;
+    top:0;
+    bottom:0;
+    right:0;
+    opacity: 1;
+    transition: opacity 1s 3s;
+}
+
+body.animate #profile-foreground {
+    opacity: .8;
+}
+
+#profile-background {
+    position: absolute;
+    z-index: 0;
+    left:0;
+    top:0;
+    bottom:0;
+    right:0;
+    opacity: 0;
+    
+    background-image: url("../Assets/background.jpg");
+    background-size: 250%;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background-size 10s 3s, opacity 1s 3s;
+}
+
+body.animate #profile-background {
+    opacity: 1;
+    background-size: 230%;
+}
+
+.content{
+    height: calc(100vh - 2em);
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#content-detail {
+    padding-right: 5em;
+}
+
+#intro {
+    color: white;
+    margin-bottom: 10px;
+    opacity:0;
+    transform: translateY(-15px);
+    transition: opacity 1.5s, transform 1.5s;
+}
+
+body.animate #intro{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+p#designation{
+    font-size: 12px;
+    opacity: 0;
+    transform: rotateY(90deg);
+    transition: opacity .5s .2s, transform .5s .2s;
+}
+
+body.animate #designation{
+    opacity: 1;
+    transform: rotateY(0);
+}
+
+#line {
+    width: 0px;
+    height: 2px;
+    margin-top: 1em;
+    background-color: rgb(130, 53, 104);
+    transition: width 1s;
+}
+
+body.animate #line {
+    width: 90px;
+}
+
+#desc{
+    display: block;
+    font-size: 14px;
+    margin-bottom: 20px;
+    transform: rotateX(90deg);
+    transition: opacity 1s .3s, transform 1s .3s;
+}
+
+body.animate #desc{
+    opacity: 1;
+    transform: rotateX(0deg);
+}
+
+a#button {
+    appearance:  none;
+    display: inline-block;
+    text-decoration: none;
+    border: 1px solid white;
+    border-radius: 100px;
+    background-color: white;
+    color: #642B73;
+    font-size: 14px;
+    padding: .5em 2em;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: transform 1.5s, opacity 1.5s;
+}
+
+body.animate a#button{
+    opacity: 1; 
+    transform: translateY(0);
+}
+
+a.social {
+    display: inline-block;
+    margin-top: 20px;
+    margin-right: .5em;
+    font-size: 30px;
+    color: white;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+a.social:nth-child(1) {
+    transition: transform .5s 1.8s, opacity .5s 1.8s;
+}
+
+a.social:nth-child(2) {
+    transition: transform .5s 2s, opacity .5s 2s;
+}
+
+a.social:nth-child(3) {
+    transition: transform .5s 2.2s, opacity .5s 2.2s;
+}
+
+body.animate a.social {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.profile-pic{
+    background-image: url("../Assets/profile-pic.jpg");
+    width: 200px;
+    height: 200px;
+    background-size: 125%;
+    border-radius: 100%;
+    background-position: 26% 32%;
+    box-shadow:0 10px 20px rgba(0,0,0,.5);
+    transform: scale(1.1);
+    opacity: 0;
+    transition: transform 1s,
+    opacity 1s;
+    
+}
+
+body.animate .profile-pic {
+    opacity:1;
+    transform: scale(1);
+}
+
+@media  (max-width:800px){
+    .content{
+        flex-direction: column;
+    }
+
+    #content-pic {
+        order:1;
+    }
+
+    #content-detail{
+        order: 2;
+        text-align: center;
+        padding-right: 0;
+    }
+
+    hr#line {
+        position: relative;
+        left: 50%;
+        margin-left: -45px;
+    }
+
+    
+}
