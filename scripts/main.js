@@ -11,9 +11,15 @@ preload(
     "https://zakiya123.github.io/profile/Assets/background.jpg"
 )
 
+var images_loaded = images.map(img => {
+    return new Promise((resolve, reject) => {
+        img.onload = () => resolve(true)
+        img.onerror = () => reject('Image loading failed')
+    })
+})
+
 $(function(){
-    setTimeout(function() {
+    Promise.all(images_loaded).then(() => {
         $("body").addClass("animate");
-        
-    }, 1000)
+    })
 });
