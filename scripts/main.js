@@ -20,6 +20,8 @@ var images_loaded = images.map(img => {
 
 $(function(){
     Promise.all(images_loaded).then(() => {
-        $("body").addClass("animate");
+        setTimeout(() => {
+            $("body").addClass("animate");
+        }, 2000)
     })
 });

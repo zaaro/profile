@@ -16,6 +16,35 @@ p{
     opacity: 0;
 }
 
+.preloader {
+    width: 100px;
+    height: 100px;
+    z-index: 222;
+    position:absolute;
+    left: calc(50% - 50px);
+    top: 50%;
+    margin-top: -50px;
+    border-left: solid 3px rgba(255, 255, 255, .1);
+    border-top: solid 3px rgba(255, 255, 255, .1);
+    border-right: solid 3px rgba(255, 255, 255, .1);
+    border-bottom: solid 3px white;
+    border-radius: 100%;
+    opacity: 1;
+    transition: opacity .5s, top 1s;
+    animation: rotate-anim 1s ease-in-out infinite;
+}
+
+body.animate .preloader {
+    opacity: 0;
+    top: 0;
+    pointer-events: none;
+}
+
+@-webkit-keyframes rotate-anim {
+    from { transform: rotate(0) }
+    to { transform: rotate(360deg) }
+}
+
 #container {
     position: relative;
     overflow: hidden;
