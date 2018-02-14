@@ -138,7 +138,7 @@ body.animate #designation{
     width: 0px;
     height: 2px;
     margin-top: 1em;
-    background-color: rgb(130, 53, 104);
+    background-color: rgb(136, 33, 102);
     transition: width 1s;
 }
 
@@ -204,6 +204,7 @@ a.social:nth-child(3) {
 
 a.social:nth-child(4) {
     transition: transform .5s 2.4s, opacity .5s 2.4s;
+    margin: 0;
 }
 
 body.animate a.social {
@@ -236,6 +237,10 @@ body.animate .profile-pic {
         flex-direction: column;
     }
 
+    body.animate #profile-background {
+        background-size: cover;
+    }
+
     #content-pic {
         order:1;
     }
@@ -246,11 +251,9 @@ body.animate .profile-pic {
         padding-right: 0;
     }
 
-    hr#line {
+    div#line {
         position: relative;
         left: 50%;
         margin-left: -45px;
     }
-
-    
 }
