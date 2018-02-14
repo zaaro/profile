@@ -202,6 +202,10 @@ a.social:nth-child(3) {
     transition: transform .5s 2.2s, opacity .5s 2.2s;
 }
 
+a.social:nth-child(4) {
+    transition: transform .5s 2.4s, opacity .5s 2.4s;
+}
+
 body.animate a.social {
     transform: translateY(0);
     opacity: 1;
@@ -217,8 +221,8 @@ body.animate a.social {
     box-shadow:0 10px 20px rgba(0,0,0,.5);
     transform: scale(1.1);
     opacity: 0;
-    transition: transform 1s,
-    opacity 1s;
+    transition: transform 1s 2.5s,
+    opacity 1s 2.5s;
     
 }
 
